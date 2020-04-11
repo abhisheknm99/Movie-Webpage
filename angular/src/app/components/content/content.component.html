@@ -1,0 +1,51 @@
+<div class="bg">
+<nav class="navbar navbar-inverse fixed-to-top">
+      <div class="container">
+        <div class="navbar-header">
+            <a style="color: white;" class="navbar-brand" href="#">Movie DB</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li><a [routerLink]="['/']">Home</a></li>
+            <li class="active"><a [routerLink]="['/content']">Content</a></li>
+            <li><a [routerLink]="['/about']">About</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a *ngIf="!authService.loggedIn()" [routerLink]="['/login']"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            <li><a *ngIf="!authService.loggedIn()" [routerLink]="['/register']"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+			<li><a *ngIf="authService.loggedIn()" href="#" (click)="authService.logout()"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+        </ul>
+    </div>
+  </nav>
+
+<div class="container" style="padding-bottom:10%;">
+<h1>Choose your favourite category:</h1>
+	<div class="row" style="padding-top:2%;">
+		<div class="col-lg-6">
+   			<div class="hovereffect">
+	       		 <img class="img-responsive" src="http://cdn1us.denofgeek.com/sites/denofgeekus/files/styles/main_wide/public/2016/09/justice-league-movie-team-photo.jpg?itok=v-pJJGKS" alt="">
+	       	     <div class="overlay">
+	                <h2></h2>
+					<p>
+						<a [routerLink]="['/page1']" style="font-size: 25px;">Non-Animated Movies</a>
+					</p>
+				 </div>
+			</div>
+		</div>
+
+		<div class="col-lg-6">
+	  	  <div class="hovereffect">
+	         <img class="img-responsive" src="/assets/ani.jpg">
+            	<div class="overlay">
+               		 <h2></h2>
+						<p>
+							<a [routerLink]="['/anipage1']" style="font-size: 25px;">Animated Movies</a>
+						</p>
+            	</div>
+   		  </div>
+  	 	</div>
+	</div>
+</div>
+  <footer>
+    Copyright© Team-7 2020
+  </footer>
+</div>

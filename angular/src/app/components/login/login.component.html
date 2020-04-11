@@ -1,0 +1,46 @@
+<div class="bg1">
+<nav class="navbar navbar-inverse fixed-to-top">
+      <div class="container">
+         <div class="navbar-header">
+            <a style="color: white;" class="navbar-brand" href="#">Movie DB</a>
+         </div>
+         <ul class="nav navbar-nav">
+               <li><a [routerLink]="['/']">Home</a></li>
+               <li><a *ngIf="authService.loggedIn()" [routerLink]="['/content']">Content</a></li>
+               <li><a [routerLink]="['/about']"> About</a></li>
+         </ul>
+         <ul class="nav navbar-nav navbar-right">
+               <li class="active" ><a *ngIf="!authService.loggedIn()"[routerLink]="['/login']"> <span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+               <li><a *ngIf="!authService.loggedIn()"[routerLink]="['/register']"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+               <li><a *ngIf="authService.loggedIn()" href="#" (click)="authService.logout()"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+         </ul>
+      </div>
+   </nav>
+      <div class="sidenav">
+      
+      </div>
+      <div id="bg" class="main">
+         <div class="col-md-6 col-sm-12">
+         <div id="title">
+            <p>Login Page.<br></p>
+            <h4>Login or register from here to access.</h4>
+         </div>
+            <div class="login-form">
+            <!-- login -->
+               <p id="status">{{status}}</p>
+               <form>
+                  <div class="form-group">
+                     <label>Username</label>
+                     <input type="text" class="form-control" [(ngModel)]="username" name="username" placeholder="Username"/>
+                  </div>
+                  <div class="form-group">
+                     <label>Password</label>
+                     <input type="password" class="form-control" [(ngModel)]="password" name="password" placeholder="Password"/>
+                  </div>
+                  <button class="btn btn-success" (click)="onSubmit()">Login</button>
+                  <span id="sign">New User?  <a [routerLink]="['/register']"> Register</a></span>
+               </form>
+            </div>
+         </div>
+      </div>
+   </div>

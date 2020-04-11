@@ -1,0 +1,30 @@
+<div id ="bg">
+<nav class="navbar navbar-inverse fixed-to-top">
+	  	<div class="container">
+	    	<div class="navbar-header">
+            <a style="color: white;" class="navbar-brand" href="#">Movie DB</a>
+	    	</div>
+	    	<ul class="nav navbar-nav">
+	      		<li class="active" ><a [routerLink]="['/']">Home</a></li>
+	      		<li><a *ngIf="authService.loggedIn()" [routerLink]="['/content']">Content</a></li>
+	      		<li><a *ngIf="!authService.loggedIn()" [routerLink]="['/about']">About</a></li>
+	    	</ul>
+	    	<ul class="nav navbar-nav navbar-right">
+	      		<li><a *ngIf="!authService.loggedIn()" [routerLink]="['/login']"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+	      		<li><a *ngIf="!authService.loggedIn()" [routerLink]="['/register']"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+				<li><a *ngIf="authService.loggedIn()" href="#" (click)="authService.logout()"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+	    	</ul>
+	 	</div>
+	</nav>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="cent">
+					<h1 id="big" >The Movie Website</h1><hr>
+					<a class="btn btn-primary btn-lg" [routerLink]="['/login']">Get Started</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,19 @@
+#bg{
+	background-image: url("/assets/index_bg.png");
+	height: 100%;
+	/*background-position: center;*/
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.cent{
+	color: white;
+	text-align: center;
+	padding-top: 20%;
+	font-family: "Calibri";
+}
+
+#big{
+	font-size: 75px;
+	font-weight: 10px;
+	font-family: "Times-new-roman";
+}

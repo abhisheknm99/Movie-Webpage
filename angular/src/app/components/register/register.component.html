@@ -1,0 +1,53 @@
+<div id="bg">
+<nav class="navbar navbar-inverse fixed-to-top">
+      <div class="container">
+         <div class="navbar-header">
+            <a style="color: white;" class="navbar-brand" href="#">Movie DB</a>
+         </div>
+         <ul class="nav navbar-nav">
+               <li ><a [routerLink]="['/']">Home</a></li>
+               <li><a *ngIf="authService.loggedIn()" [routerLink]="['/content']">Content</a></li>
+               <li><a [routerLink]="['/about']">About</a></li>
+         </ul>
+         <ul class="nav navbar-nav navbar-right">
+               <li><a *ngIf="!authService.loggedIn()" [routerLink]="['/login']"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+               <li class="active"><a *ngIf="!authService.loggedIn()"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+               <li><a *ngIf="authService.loggedIn()" href="#" (click)="authService.logout()"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+         </ul>
+      </div>
+   </nav>
+      <div class="sidenav">
+      
+      </div>
+      <div class="main">
+         <div class="col-md-6 col-sm-12">
+         <div id="title1">
+            <p>Signup Page.<br></p>
+            <h4>Register here to access the content.</h4>
+         </div>
+            <div class="login-form">
+            <p id="status">{{status}}</p>
+               <form>
+                  <div class="form-group">
+                     <label>Name</label>
+                     <input type="text" [(ngModel)]="name" name="name" class="form-control" placeholder="Name"/>
+                  </div>
+                  <div class="form-group">
+                     <label>Email ID</label>
+                     <input type="Email" [(ngModel)]="email" name="email" class="form-control" placeholder="Email ID" />
+                  </div>
+                  <div class="form-group">
+                     <label>Username</label>
+                     <input type="text" [(ngModel)]="username" name="username" class="form-control" placeholder="Username" />
+                  </div>
+                  <div class="form-group">
+                     <label>Password</label>
+                     <input type="password" [(ngModel)]="password" name="password" class="form-control" placeholder="Password" />
+                  </div>
+                  <button class="btn btn-success" (click)="onSubmit()">SignUp</button>
+                  <span id="sign1">Already a user?  <a [routerLink]="['/login']" > Login</a></span>
+               </form>
+            </div>
+         </div>
+      </div>
+</div>
