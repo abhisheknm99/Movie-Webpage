@@ -1,6 +1,5 @@
 # Movie-Webpage
-Version
-1.0.0
+Version 1.0.0
 
 Installation
 Install the dependencies
